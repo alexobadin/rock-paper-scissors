@@ -15,7 +15,7 @@ function computerPlay() {
     console.log('папір - компьютер');
     return 'папір';
   } else {
-    console.log('ножіці - компьютер');
+    console.log('ножиці - компьютер');
     return 'ножиці';
   }
 }
@@ -61,7 +61,7 @@ function playRound(playersSelected, computerPlay) {
 }
 
 function game() {
-  for (let i = 1; i <= 3; i++) {
+  while(let i = 1; i <= 3; i++) {
     // console.log(playRound(playersSelected, computerPlay()));
 
     playRound(playersSelected(), computerPlay());

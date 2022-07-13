@@ -20,7 +20,7 @@ function computerPlay() {
 }
 let playerChoice;
 function playersSelected() {
-  playerChoice = prompt('Що обираєш? Камінь 🪨, ножиці ✂️ чи папір 🧻?').toLowerCase();
+  playerChoice = prompt('Що обираєш? \n 🪨 Камінь ,✂️ ножиці чи 🧻 папір ?').toLowerCase();
   if (playerChoice != 'ножиці' && playerChoice != 'камінь' && playerChoice != 'папір') {
     alert('Щось незрозуміле');
     result = false;
@@ -37,32 +37,32 @@ function playRound(playersSelected, computerPlay) {
     result = false;
   } else if (playersSelected == 'папір' && computerPlay == 'камінь') {
     playerScore += 1;
-    alert(`😎 виграв! Папір накриває камінь `);
+    alert(`🧔🏻‍♂️ Людина виграла цей раунд! Папір накриває камінь `);
     result = true;
   } else if (playersSelected == 'папір' && computerPlay == 'ножиці') {
     computerScore += 1;
-    alert(`🤖 виграв! Ножиці ріжуть папір `);
+    alert(`🤖 Штучний інтелект виграв! Ножиці ріжуть папір `);
     result = true;
     // second variant
   } else if (playersSelected == 'камінь' && computerPlay == 'папір') {
     computerScore += 1;
-    alert(`🤖 виграв! Папір накриває камінь `);
+    alert(`🤖 Штучний інтелект виграв! Папір накриває камінь `);
     result = true;
   } else if (playersSelected == 'камінь' && computerPlay == 'камінь') {
     alert(`Ніхто не виграв! Зіграйте ще раз`);
     result = false;
   } else if (playersSelected == 'камінь' && computerPlay == 'ножиці') {
     playerScore += 1;
-    alert(`😎 виграв! Камінь бьє ножиці `);
+    alert(`🧔🏻‍♂️ Людина виграла цей раунд! Камінь бьє ножиці `);
     result = true;
     // third variant
   } else if (playersSelected == 'ножиці' && computerPlay == 'папір') {
     playerScore += 1;
-    alert(`😎 виграв! Ножиці ріжуть папір`);
+    alert(`🧔🏻‍♂️ Людина виграла цей раунд! Ножиці ріжуть папір`);
     result = true;
   } else if (playersSelected == 'ножиці' && computerPlay == 'камінь') {
     computerScore += 1;
-    alert(`🤖 виграв! Камінь бьє ножиці  `);
+    alert(`🤖 Штучний інтелект виграв! Камінь бьє ножиці  `);
     result = true;
   } else if (playersSelected == 'ножиці' && computerPlay == 'ножиці') {
     alert(`Ніхто не виграв! Зіграйте ще раз`);
@@ -88,11 +88,11 @@ function game() {
 
 game();
 if (playerScore == computerScore) {
-  alert(`Нічья😎🤖 ${playerScore} - ${computerScore} `);
+  alert(`Нічья 🧔🏻‍♂️ 🤖 ${playerScore} - ${computerScore} `);
 } else if (playerScore > computerScore) {
-  alert(`Перемог Гравець 😎 ${playerScore} - ${computerScore} `);
+  alert(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
 } else {
-  alert(` Перемог штучний інтелект 🤖 ${computerScore} - ${playerScore} `);
+  alert(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
 }
 
 // console.log(playersSelected());

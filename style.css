@@ -16,6 +16,13 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url(/img/background.gif);
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(220, 220, 220);
+}
 
 .container {
   max-width: 120rem;
@@ -72,11 +79,15 @@ html {
   justify-content: center;
   align-items: center;
 
-  border: 3px solid #333;
+  border: 3px solid rgb(220, 220, 220);
+  background-color: rgba(240, 248, 255, 0.131);
 }
 
 .round-figure img {
   width: 18rem;
+}
+.round-figure p {
+  font-size: 6.4rem;
 }
 
 .show {
@@ -87,13 +98,42 @@ html {
   display: none;
 }
 
+/* .win {
+  border: 5px solid rgba(255, 143, 5, 0.911);
+}
+
+.robo-win {
+  border: 5px solid rgba(15, 15, 15, 0.911);
+} */
+
 /* ****************** */
 /* ROUND SCORE */
 /* ****************** */
 
 .section-round-score {
-  font-size: 4.4rem;
   margin-bottom: 4.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+#round-count {
+  font-size: 4.4rem;
+}
+.container-round-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(220, 220, 220);
+  color: #ff2f17;
+
+  padding: 1.4rem;
+  width: 80rem;
+  font-size: 1.6rem;
+  position: relative;
 }
 
 /* ****************** */
@@ -117,7 +157,8 @@ html {
   justify-content: center;
   align-items: center;
 
-  border: 3px solid #333;
+  border: 3px solid rgb(220, 220, 220);
+  background-color: rgba(240, 248, 255, 0.131);
 }
 .img-choice {
   width: 18rem;
@@ -130,4 +171,13 @@ html {
 #restart-btn {
   font-family: inherit;
   padding: 1.8rem;
+}
+
+.robot {
+  width: 24rem;
+  right: 27rem;
+  filter: grayscale(100);
+  position: absolute;
+  left: 62rem;
+  bottom: 5rem;
 }

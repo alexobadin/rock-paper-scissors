@@ -82,11 +82,11 @@ function game() {
   }
 }
 
-game();
-if (playerScore > computerScore) {
-  alert(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
-} else {
-  alert(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
-}
+// game();
+// if (playerScore > computerScore) {
+//   alert(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
+// } else {
+//   alert(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
+// }
 
 // console.log(playersSelected());

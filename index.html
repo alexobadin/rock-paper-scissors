@@ -4,10 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
     <script src="/script.js"></script>
     <script src="/script.js"></script>
     <link rel="stylesheet" href="/style.css" />
     <title>Камінь, ножиці папір</title>
   </head>
-  <body></body>
+  <body>
+    <div class="centering">
+      <h1 class="headline">Камінь Ножиці Папір</h1>
+
+      <section class="section-results">
+        <div class="result">
+          <p>Гравець</p>
+          <div class="round-figure">
+            <p>папір</p>
+          </div>
+        </div>
+
+        <div class="result">
+          <p>Робот</p>
+          <div class="round-figure">
+            <p>Камінь</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-round-score">
+        <p>1:0</p>
+      </section>
+
+      <section class="section-round-choice">
+        <div class="figure-choice">
+          <img src="/img/rock.png" alt="камінь" />
+        </div>
+        <div class="figure-choice">
+          <img src="/img/scissors.png" alt="ножиці" />
+        </div>
+        <div class="figure-choice">
+          <img src="/img/paper.png" alt="папір" />
+        </div>
+      </section>
+      <button id="restart-btn">рестарт</button>
+    </div>
+  </body>
 </html>

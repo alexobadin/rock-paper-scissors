@@ -74,6 +74,19 @@ html {
 
   border: 3px solid #333;
 }
+
+.round-figure img {
+  width: 18rem;
+}
+
+.show {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
 /* ****************** */
 /* ROUND SCORE */
 /* ****************** */
@@ -105,6 +118,9 @@ html {
   align-items: center;
 
   border: 3px solid #333;
+}
+.img-choice {
+  width: 18rem;
 }
 
 /* ****************** */

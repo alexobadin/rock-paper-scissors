@@ -122,6 +122,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4.6rem;
+  overflow: hidden;
 
   background-color: rgba(255, 255, 255, 0.882);
   color: #333;
@@ -140,6 +141,9 @@ body {
   font-size: 2.4rem;
   line-height: 1.6;
   margin-bottom: 4.8rem;
+  padding: 4.8rem;
+
+  text-align: center;
 }
 
 .overlay {
@@ -242,17 +246,18 @@ body {
 .robot {
   width: 24rem;
   right: 27rem;
-  filter: grayscale(100);
+
   position: absolute;
   left: 62rem;
   bottom: 5rem;
 }
 
 .div-position-robot {
-  position: relative;
 }
 .robot-final {
-  left: 10rem;
-  bottom: -6.2rem;
+  width: 34rem;
   position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(20%, 0%);
 }

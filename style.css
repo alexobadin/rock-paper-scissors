@@ -107,6 +107,68 @@ body {
 } */
 
 /* ****************** */
+/* MODAL FINAL */
+/* ****************** */
+
+.final-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.6rem;
+
+  background-color: rgba(255, 255, 255, 0.882);
+  color: #333;
+  padding: 6rem;
+  z-index: 10;
+}
+
+.final-headline {
+  font-size: 4.6rem;
+  text-align: center;
+
+  line-height: 1.4;
+}
+
+.final-par {
+  font-size: 2.4rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+.close-modal {
+  font-size: 2.4rem;
+  color: #333;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  padding: 1.8rem;
+  border: 3px solid #333;
+
+  margin-top: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ****************** */
 /* ROUND SCORE */
 /* ****************** */
 
@@ -184,4 +246,13 @@ body {
   position: absolute;
   left: 62rem;
   bottom: 5rem;
+}
+
+.div-position-robot {
+  position: relative;
+}
+.robot-final {
+  left: 10rem;
+  bottom: -6.2rem;
+  position: absolute;
 }

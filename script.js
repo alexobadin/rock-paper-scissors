@@ -10,19 +10,14 @@ const robotRoundChoice = document.querySelector('.robot-round-choice');
 const robotQuestionsSymbol = document.querySelector('.robot-questions-symbol');
 const roundMessage = document.querySelector('.round-message');
 const restartBtn = document.getElementById('restart-btn');
+const finalModal = document.querySelector('.final-modal');
+const overlay = document.querySelector('.overlay ');
+const closeModalBtn = document.querySelector('.close-modal');
 
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
 let result = true;
-
-rock.addEventListener('click', rockChoiceGame);
-// playerChoice = 'rock';
-// playerRoundChoice.src = '/img/rock.png';
-// console.log(playerChoice);
-
-// gameCheck();
-// });
 
 function rockChoiceGame() {
   playerChoice = 'rock';
@@ -31,13 +26,6 @@ function rockChoiceGame() {
   game();
 }
 
-paper.addEventListener('click', paperChoiceGame);
-// playerChoice = 'paper';
-// playerRoundChoice.src = '/img/paper.png';
-// console.log(playerChoice);
-
-// gameCheck();
-
 function paperChoiceGame() {
   playerChoice = 'paper';
   playerRoundChoice.src = '/img/paper.png';
@@ -45,34 +33,12 @@ function paperChoiceGame() {
   game();
 }
 
-scissors.addEventListener('click', scissorsChoiceGame);
-//   playerChoice = 'scissors';
-//   playerRoundChoice.src = '/img/scissors.png';
-//   console.log(playerChoice);
-
-//   gameCheck();
-// });
-
 function scissorsChoiceGame() {
   playerChoice = 'scissors';
   playerRoundChoice.src = '/img/scissors.png';
   console.log(playerChoice);
   game();
 }
-
-// function playersSelected() {
-//   playerChoice = prompt(
-//     '🪨 Камінь ,✂️ ножиці чи 🧻 папір \n🤖 Гра до трьох перемог🧔🏻‍♂️\n       \nЩо обираєш ти? '
-//   ).toLowerCase();
-//   if (playerChoice != 'ножиці' && playerChoice != 'камінь' && playerChoice != 'папір') {
-//     alert('Щось незрозуміле');
-//     result = false;
-//   } else {
-//     console.log(`${playerChoice} - вибор ігрока`);
-//     result = true;
-//     return playerChoice;
-//   }
-// }
 
 function computerPlay() {
   let randomNumber = Math.floor(Math.random() * 3 + 1);
@@ -135,10 +101,6 @@ function playRound(playerChoice, computerPlay) {
 }
 
 function game() {
-  // let i = 1;
-  // while (playerScore < 3 && computerScore < 3) {
-  // console.log(playRound(playersSelected, computerPlay()));
-
   playerRoundChoice.classList.remove('show');
   playerQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.remove('show');
@@ -158,31 +120,21 @@ function game() {
     paper.removeEventListener('click', paperChoiceGame);
     scissors.removeEventListener('click', scissorsChoiceGame);
   }
-  if (playerScore > computerScore) {
+  if (playerScore == 3) {
+    overlay.classList.remove('hidden');
+    finalModal.classList.remove('hidden');
     console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
-  } else {
+  } else if (computerScore == 3) {
+    overlay.classList.remove('hidden');
+    finalModal.classList.remove('hidden');
     console.log(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
   }
 }
 
-// // roundcheck
-// function gameCheck() {
-//   if (playerScore == 3 || computerScore == 3) {
-//     gameCheck();
-//   } else if (playerScore > computerScore) {
-//     rock.removeEventListener('click', rockChoiceGame);
-//     paper.removeEventListener('click', paperChoiceGame);
-//     scissors.removeEventListener('click', scissorsChoiceGame);
-//     console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
-//   } else {
-//     rock.removeEventListener('click', rockChoiceGame);
-//     paper.removeEventListener('click', paperChoiceGame);
-//     scissors.removeEventListener('click', scissorsChoiceGame);
-//     console.log(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
-//   }
-// }
-
-restartBtn.addEventListener('click', restartFunction);
+function closeFunction() {
+  overlay.classList.add('hidden');
+  finalModal.classList.add('hidden');
+}
 
 function restartFunction() {
   rock.addEventListener('click', rockChoiceGame);
@@ -193,3 +145,17 @@ function restartFunction() {
   computerScore = 0;
   result = true;
 }
+
+rock.addEventListener('click', rockChoiceGame);
+scissors.addEventListener('click', scissorsChoiceGame);
+paper.addEventListener('click', paperChoiceGame);
+
+overlay.addEventListener('click', closeFunction);
+closeModalBtn.addEventListener('click', closeFunction);
+restartBtn.addEventListener('click', restartFunction);
+
+// if (playerScore > computerScore) {
+//   console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
+// } else {
+//   console.log(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
+// }

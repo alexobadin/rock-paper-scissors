@@ -215,6 +215,10 @@ body {
   margin-bottom: 4.8rem;
 }
 
+.filter {
+  filter: contrast(70%);
+}
+
 .figure-choice {
   width: 25rem;
   height: 25rem;
@@ -224,8 +228,14 @@ body {
   align-items: center;
 
   border: 3px solid rgb(220, 220, 220);
-  background-color: rgba(240, 248, 255, 0.131);
+  background-color: rgba(35, 35, 35, 0.761);
+  transition: 0.1s;
 }
+.figure-choice:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 0px 18px rgba(255, 255, 255, 0.64);
+}
+
 .img-choice {
   width: 18rem;
 }
@@ -237,10 +247,15 @@ body {
 #restart-btn {
   font-family: inherit;
   padding: 1.8rem;
+  cursor: pointer;
 
   background-color: #ffffff00;
   border: 3px solid rgb(220, 220, 220);
   color: rgb(220, 220, 220);
+}
+
+#restart-btn:hover {
+  transform: scale(1.05);
 }
 
 .robot {

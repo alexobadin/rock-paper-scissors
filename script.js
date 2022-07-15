@@ -16,13 +16,24 @@ const closeModalBtn = document.querySelector('.close-modal');
 const finalHeadline = document.querySelector('.final-headline');
 const finalMessage = document.querySelector('.final-par');
 const robotFinalImg = document.querySelector('.robot-final');
+const robotColorWin = document.querySelector('.robot-color-win');
+const playerColorWin = document.querySelector('.player-color-win');
 
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
 let result = true;
 
+// function RockChoiceTest() {
+//   setTimeout(rockChoiceGame, 3000);
+// }
 function rockChoiceGame() {
+  playerRoundChoice.classList.remove('show');
+  playerQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.remove('show');
+  robotQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.add('filter');
+  robotRoundChoice.src = '/img/gif-rob-choice.gif';
   playerChoice = 'rock';
   playerRoundChoice.src = '/img/rock.png';
   console.log(playerChoice);
@@ -30,6 +41,12 @@ function rockChoiceGame() {
 }
 
 function paperChoiceGame() {
+  playerRoundChoice.classList.remove('show');
+  playerQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.remove('show');
+  robotQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.add('filter');
+  robotRoundChoice.src = '/img/gif-rob-choice.gif';
   playerChoice = 'paper';
   playerRoundChoice.src = '/img/paper.png';
   console.log(playerChoice);
@@ -37,6 +54,12 @@ function paperChoiceGame() {
 }
 
 function scissorsChoiceGame() {
+  playerRoundChoice.classList.remove('show');
+  playerQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.remove('show');
+  robotQuestionsSymbol.classList.add('hide');
+  robotRoundChoice.classList.add('filter');
+  robotRoundChoice.src = '/img/gif-rob-choice.gif';
   playerChoice = 'scissors';
   playerRoundChoice.src = '/img/scissors.png';
   console.log(playerChoice);
@@ -48,13 +71,16 @@ function computerPlay() {
 
   if (randomNumber === 1) {
     console.log('rock - компьютер');
+    robotRoundChoice.classList.remove('filter');
     robotRoundChoice.src = '/img/rock.png';
     return 'rock';
   } else if (randomNumber === 2) {
+    robotRoundChoice.classList.remove('filter');
     robotRoundChoice.src = '/img/paper.png';
     console.log('paper - компьютер');
     return 'paper';
   } else {
+    robotRoundChoice.classList.remove('filter');
     robotRoundChoice.src = '/img/scissors.png';
     console.log('scissors - компьютер');
     return 'scissors';
@@ -104,10 +130,13 @@ function playRound(playerChoice, computerPlay) {
 }
 
 function game() {
-  playerRoundChoice.classList.remove('show');
-  playerQuestionsSymbol.classList.add('hide');
-  robotRoundChoice.classList.remove('show');
-  robotQuestionsSymbol.classList.add('hide');
+  setTimeout(game1, 1400);
+}
+function game1() {
+  // playerRoundChoice.classList.remove('show');
+  // playerQuestionsSymbol.classList.add('hide');
+  // robotRoundChoice.classList.remove('show');
+  // robotQuestionsSymbol.classList.add('hide');
 
   result = true;
   playRound(playerChoice, computerPlay());
@@ -146,6 +175,10 @@ function closeFunction() {
 }
 
 function restartFunction() {
+  playerRoundChoice.classList.add('show');
+  robotRoundChoice.classList.add('show');
+  playerQuestionsSymbol.classList.remove('hide');
+  robotQuestionsSymbol.classList.remove('hide');
   rock.addEventListener('click', rockChoiceGame);
   paper.addEventListener('click', paperChoiceGame);
   scissors.addEventListener('click', scissorsChoiceGame);

@@ -16,8 +16,8 @@ const closeModalBtn = document.querySelector('.close-modal');
 const finalHeadline = document.querySelector('.final-headline');
 const finalMessage = document.querySelector('.final-par');
 const robotFinalImg = document.querySelector('.robot-final');
-const robotColorWin = document.querySelector('.robot-color-win');
-const playerColorWin = document.querySelector('.player-color-win');
+const playerFigureWin = document.getElementById('player-figure');
+const robotFigureWin = document.getElementById('robot-figure');
 
 let playerChoice;
 let playerScore = 0;
@@ -28,6 +28,8 @@ let result = true;
 //   setTimeout(rockChoiceGame, 3000);
 // }
 function rockChoiceGame() {
+  robotFigureWin.classList.remove('win');
+  playerFigureWin.classList.remove('win');
   playerRoundChoice.classList.remove('show');
   playerQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.remove('show');
@@ -41,6 +43,8 @@ function rockChoiceGame() {
 }
 
 function paperChoiceGame() {
+  robotFigureWin.classList.remove('win');
+  playerFigureWin.classList.remove('win');
   playerRoundChoice.classList.remove('show');
   playerQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.remove('show');
@@ -54,6 +58,8 @@ function paperChoiceGame() {
 }
 
 function scissorsChoiceGame() {
+  robotFigureWin.classList.remove('win');
+  playerFigureWin.classList.remove('win');
   playerRoundChoice.classList.remove('show');
   playerQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.remove('show');
@@ -94,15 +100,18 @@ function playRound(playerChoice, computerPlay) {
     result = false;
   } else if (playerChoice == 'paper' && computerPlay == 'rock') {
     playerScore += 1;
+    playerFigureWin.classList.add('win');
     console.log(`🧔🏻‍♂️ Людина виграла цей раунд! Папір накриває rock  \nРахунок: ${playerScore} - ${computerScore}`);
     roundMessage.textContent = `ЛЮДИНА, ТОБІ ПОЩАСТИЛО! `;
   } else if (playerChoice == 'paper' && computerPlay == 'scissors') {
     computerScore += 1;
+    robotFigureWin.classList.add('win');
     console.log(`🤖 Штучний інтелект виграв! Ножиці ріжуть paper \nРахунок: ${computerScore} - ${playerScore};`);
     roundMessage.textContent = `ХАХА! ТРЕБА БУЛО КАМІНЬ ВИКИДАТИ!`;
     // second variant
   } else if (playerChoice == 'rock' && computerPlay == 'paper') {
     computerScore += 1;
+    robotFigureWin.classList.add('win');
     console.log(`🤖 Штучний інтелект виграв! Папір накриває rock \nРахунок: ${computerScore} - ${playerScore}`);
     roundMessage.textContent = `ПОГАНА ІДЕЯ З КАМНЕМ, ПОГАНА! `;
   } else if (playerChoice == 'rock' && computerPlay == 'rock') {
@@ -111,15 +120,18 @@ function playRound(playerChoice, computerPlay) {
     result = false;
   } else if (playerChoice == 'rock' && computerPlay == 'scissors') {
     playerScore += 1;
+    playerFigureWin.classList.add('win');
     console.log(`🧔🏻‍♂️ Людина виграла цей раунд! Камінь бьє scissors \nРахунок:${playerScore} - ${computerScore}  `);
     roundMessage.textContent = `МЕНІ ПРОСТО ПОДОБАЮТЬСЯ НОЖИЦІ!`;
     // third variant
   } else if (playerChoice == 'scissors' && computerPlay == 'paper') {
     playerScore += 1;
+    playerFigureWin.classList.add('win');
     console.log(`🧔🏻‍♂️ Людина виграла цей раунд! Ножиці ріжуть paper \nРахунок: ${playerScore} - ${computerScore} `);
     roundMessage.textContent = `ЦЕ ТОЧНО ЗБІЙ У КОДІ!`;
   } else if (playerChoice == 'scissors' && computerPlay == 'rock') {
     computerScore += 1;
+    robotFigureWin.classList.add('win');
     console.log(`🤖 Штучний інтелект виграв! Камінь бьє scissors\nРахунок: ${computerScore} - ${playerScore}`);
     roundMessage.textContent = `ЦЕ Я НАВІТЬ НЕ НАМАГАВСЯ!`;
   } else if (playerChoice == 'scissors' && computerPlay == 'scissors') {
@@ -175,6 +187,8 @@ function closeFunction() {
 }
 
 function restartFunction() {
+  robotFigureWin.classList.remove('win');
+  playerFigureWin.classList.remove('win');
   playerRoundChoice.classList.add('show');
   robotRoundChoice.classList.add('show');
   playerQuestionsSymbol.classList.remove('hide');

@@ -9,16 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/queries.css" />
     <title>Камінь, ножиці папір</title>
   </head>
   <body>
     <div class="centering">
-      <h1 class="headline">КАМІНЬ НОЖИЦІ ПАПІР</h1>
+      <h1 class="headline">КАМІНЬ | НОЖИЦІ | ПАПІР</h1>
 
       <section class="section-results">
         <div class="result">
           <p class="player-color-win">ЛЮДИНА</p>
-          <div class="round-figure win">
+          <div id="player-figure" class="round-figure">
             <img class="player-round-choice show" src="/img/rock.png" alt="rock" />
             <p class="player-questions-symbol">?</p>
           </div>
@@ -26,7 +27,7 @@
 
         <div class="result">
           <p class="robot-color-win">РОБОТ</p>
-          <div class="round-figure robo-win">
+          <div id="robot-figure" class="round-figure robot-win">
             <img class="robot-round-choice filter show" src="/img/rock.png" alt="rock" />
             <p class="robot-questions-symbol">?</p>
           </div>
@@ -61,6 +62,7 @@
         </div>
       </section>
       <button id="restart-btn">РЕВАНШ</button>
+      <img class="robot--600px" src="/img/robot.gif" alt="robot" />
     </div>
     <script src="/script.js"></script>
   </body>

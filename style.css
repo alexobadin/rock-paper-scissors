@@ -78,9 +78,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.1s;
 
   border: 3px solid rgb(220, 220, 220);
-  background-color: rgba(240, 248, 255, 0.131);
+  background-color: rgba(0, 0, 0, 0.241);
 }
 
 .round-figure img {
@@ -98,13 +99,11 @@ body {
   display: none;
 }
 
-/* .win {
-  border: 5px solid rgba(255, 143, 5, 0.911);
+.win {
+  transition: 0.03s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.309);
 }
-
-.robo-win {
-  border: 5px solid rgba(15, 15, 15, 0.911);
-} */
 
 /* ****************** */
 /* MODAL FINAL */
@@ -123,7 +122,7 @@ body {
   align-items: center;
   gap: 4.6rem;
   overflow: hidden;
-
+  box-shadow: 0px 0px 18px rgba(255, 255, 255, 0.64);
   background-color: rgba(255, 255, 255, 0.882);
   color: #333;
   padding: 6rem;
@@ -164,8 +163,12 @@ body {
   font-family: inherit;
   padding: 1.8rem;
   border: 3px solid #333;
+  transition: 0.1s;
 
   margin-top: auto;
+}
+.close-modal:hover {
+  transform: scale(1.05);
 }
 
 .hidden {
@@ -187,7 +190,7 @@ body {
 }
 
 #round-count {
-  font-size: 4.4rem;
+  font-size: 5.6rem;
 }
 .container-round-message {
   display: flex;
@@ -195,6 +198,7 @@ body {
   align-items: center;
   border: 3px solid rgb(220, 220, 220);
   color: #ff2f17;
+  background-color: rgba(35, 35, 35, 0.448);
 
   padding: 1.4rem;
   width: 80rem;
@@ -220,24 +224,24 @@ body {
 }
 
 .figure-choice {
-  width: 25rem;
-  height: 25rem;
+  width: 20rem;
+  height: 20rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   border: 3px solid rgb(220, 220, 220);
-  background-color: rgba(35, 35, 35, 0.761);
+  background-color: rgba(35, 35, 35, 0.91);
   transition: 0.1s;
 }
 .figure-choice:hover {
   transform: scale(1.01);
-  box-shadow: 0px 0px 18px rgba(255, 255, 255, 0.64);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.64);
 }
 
 .img-choice {
-  width: 18rem;
+  width: 14rem;
 }
 
 /* ****************** */
@@ -267,12 +271,16 @@ body {
   bottom: 5rem;
 }
 
-.div-position-robot {
-}
 .robot-final {
   width: 34rem;
   position: absolute;
   bottom: 0;
   right: 0;
   transform: translate(20%, 0%);
+}
+
+.robot--600px {
+  display: none;
+}
+.robot-round-choice {
 }

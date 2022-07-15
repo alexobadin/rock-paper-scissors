@@ -9,33 +9,56 @@ const playerQuestionsSymbol = document.querySelector('.player-questions-symbol')
 const robotRoundChoice = document.querySelector('.robot-round-choice');
 const robotQuestionsSymbol = document.querySelector('.robot-questions-symbol');
 const roundMessage = document.querySelector('.round-message');
+const restartBtn = document.getElementById('restart-btn');
 
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
 let result = true;
 
-rock.addEventListener('click', function () {
+rock.addEventListener('click', rockChoiceGame);
+// playerChoice = 'rock';
+// playerRoundChoice.src = '/img/rock.png';
+// console.log(playerChoice);
+
+// gameCheck();
+// });
+
+function rockChoiceGame() {
   playerChoice = 'rock';
   playerRoundChoice.src = '/img/rock.png';
   console.log(playerChoice);
+  game();
+}
 
-  gameCheck();
-});
-paper.addEventListener('click', function () {
+paper.addEventListener('click', paperChoiceGame);
+// playerChoice = 'paper';
+// playerRoundChoice.src = '/img/paper.png';
+// console.log(playerChoice);
+
+// gameCheck();
+
+function paperChoiceGame() {
   playerChoice = 'paper';
   playerRoundChoice.src = '/img/paper.png';
   console.log(playerChoice);
+  game();
+}
 
-  gameCheck();
-});
-scissors.addEventListener('click', function () {
+scissors.addEventListener('click', scissorsChoiceGame);
+//   playerChoice = 'scissors';
+//   playerRoundChoice.src = '/img/scissors.png';
+//   console.log(playerChoice);
+
+//   gameCheck();
+// });
+
+function scissorsChoiceGame() {
   playerChoice = 'scissors';
   playerRoundChoice.src = '/img/scissors.png';
   console.log(playerChoice);
-
-  gameCheck();
-});
+  game();
+}
 
 // function playersSelected() {
 //   playerChoice = prompt(
@@ -123,21 +146,50 @@ function game() {
 
   result = true;
   playRound(playerChoice, computerPlay());
+
   if (result == true) {
     roundCount.textContent = `${playerScore} - ${computerScore}`;
     console.log(result);
     console.log(playerScore);
     console.log(computerScore);
   }
-}
-
-// roundcheck
-function gameCheck() {
-  if (playerScore < 3 && computerScore < 3) {
-    game();
-  } else if (playerScore > computerScore) {
+  if (playerScore == 3 || computerScore == 3) {
+    rock.removeEventListener('click', rockChoiceGame);
+    paper.removeEventListener('click', paperChoiceGame);
+    scissors.removeEventListener('click', scissorsChoiceGame);
+  }
+  if (playerScore > computerScore) {
     console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
   } else {
     console.log(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
   }
+}
+
+// // roundcheck
+// function gameCheck() {
+//   if (playerScore == 3 || computerScore == 3) {
+//     gameCheck();
+//   } else if (playerScore > computerScore) {
+//     rock.removeEventListener('click', rockChoiceGame);
+//     paper.removeEventListener('click', paperChoiceGame);
+//     scissors.removeEventListener('click', scissorsChoiceGame);
+//     console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
+//   } else {
+//     rock.removeEventListener('click', rockChoiceGame);
+//     paper.removeEventListener('click', paperChoiceGame);
+//     scissors.removeEventListener('click', scissorsChoiceGame);
+//     console.log(`🤖 Штучний інтелект переміг людину з рахунком: ${computerScore} - ${playerScore} `);
+//   }
+// }
+
+restartBtn.addEventListener('click', restartFunction);
+
+function restartFunction() {
+  rock.addEventListener('click', rockChoiceGame);
+  paper.addEventListener('click', paperChoiceGame);
+  scissors.addEventListener('click', scissorsChoiceGame);
+  roundCount.textContent = `0  -  0`;
+  playerScore = 0;
+  computerScore = 0;
+  result = true;
 }

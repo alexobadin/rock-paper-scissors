@@ -35,9 +35,9 @@ function rockChoiceGame() {
   robotRoundChoice.classList.remove('show');
   robotQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.add('filter');
-  robotRoundChoice.src = '/img/gif-rob-choice.gif';
+  robotRoundChoice.src = './img/gif-rob-choice.gif';
   playerChoice = 'rock';
-  playerRoundChoice.src = '/img/rock.png';
+  playerRoundChoice.src = './img/rock.png';
   console.log(playerChoice);
   game();
 }
@@ -50,9 +50,9 @@ function paperChoiceGame() {
   robotRoundChoice.classList.remove('show');
   robotQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.add('filter');
-  robotRoundChoice.src = '/img/gif-rob-choice.gif';
+  robotRoundChoice.src = './img/gif-rob-choice.gif';
   playerChoice = 'paper';
-  playerRoundChoice.src = '/img/paper.png';
+  playerRoundChoice.src = './img/paper.png';
   console.log(playerChoice);
   game();
 }
@@ -65,9 +65,9 @@ function scissorsChoiceGame() {
   robotRoundChoice.classList.remove('show');
   robotQuestionsSymbol.classList.add('hide');
   robotRoundChoice.classList.add('filter');
-  robotRoundChoice.src = '/img/gif-rob-choice.gif';
+  robotRoundChoice.src = './img/gif-rob-choice.gif';
   playerChoice = 'scissors';
-  playerRoundChoice.src = '/img/scissors.png';
+  playerRoundChoice.src = './img/scissors.png';
   console.log(playerChoice);
   game();
 }
@@ -78,16 +78,16 @@ function computerPlay() {
   if (randomNumber === 1) {
     console.log('rock - компьютер');
     robotRoundChoice.classList.remove('filter');
-    robotRoundChoice.src = '/img/rock.png';
+    robotRoundChoice.src = './img/rock.png';
     return 'rock';
   } else if (randomNumber === 2) {
     robotRoundChoice.classList.remove('filter');
-    robotRoundChoice.src = '/img/paper.png';
+    robotRoundChoice.src = './img/paper.png';
     console.log('paper - компьютер');
     return 'paper';
   } else {
     robotRoundChoice.classList.remove('filter');
-    robotRoundChoice.src = '/img/scissors.png';
+    robotRoundChoice.src = './img/scissors.png';
     console.log('scissors - компьютер');
     return 'scissors';
   }
@@ -166,13 +166,13 @@ function game1() {
   }
   if (playerScore == 3) {
     finalHeadline.textContent = `ЛЮДИНА ПЕРЕМОГЛА!`;
-    robotFinalImg.src = '/img/robot-fin-lose.gif';
+    robotFinalImg.src = './img/robot-fin-lose.gif';
     finalMessage.textContent = `НА ЦЕЙ РАЗ ТОБІ ПОЩАСТИЛО! АЛЕ ПАМ'ЯТАЙ, ЩО ТИ ВСЬОГО ЛИШЕ ЛЮДИНА!`;
     overlay.classList.remove('hidden');
     finalModal.classList.remove('hidden');
     console.log(`🧔🏻‍♂️ Людина перемогла штучний інтелект з рахунком: ${playerScore} - ${computerScore} `);
   } else if (computerScore == 3) {
-    robotFinalImg.src = '/img/fin-robot-win.gif';
+    robotFinalImg.src = './img/fin-robot-win.gif';
     finalHeadline.textContent = `РОБОТ ПЕРЕМІГ!`;
     finalMessage.textContent = `ХА-ХА-ХА! ТВОЯ ПОРАЗКА МЕНІ БУЛА ВІДОМА ЗАЗДАЛЕГІДЬ!`;
     overlay.classList.remove('hidden');

@@ -19,7 +19,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  background-image: url(/img/background.gif);
+  background-image: url(./img/background.gif);
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
@@ -284,6 +284,4 @@ body {
 
 .robot--600px {
   display: none;
-}
-.robot-round-choice {
 }

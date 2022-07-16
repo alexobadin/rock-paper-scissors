@@ -10,11 +10,13 @@
 html {
   font-size: 62.5%;
   font-family: 'Press Start 2P', sans-serif;
+  -webkit-text-size-adjust: 100%;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   background-image: url(/img/background.gif);
@@ -153,6 +155,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   z-index: 5;
 }
 .close-modal {

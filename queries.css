@@ -8,15 +8,15 @@
 */
 
 /* ****************** */
-/* 1200px/16px = 84em */
-/*BELOW 1200px*/
+/* 1400px/16px = 88em */
+/*BELOW 1400px*/
 /* ****************** */
-
-@media (max-width: 75em) {
+@media (max-width: 90em) {
   html {
-    font-size: 56.25%;
+    font-size: 44%;
   }
 }
+
 /* ****************** */
 /* 1100px/16px = 68em */
 /*BELOW 1100px*/
@@ -24,7 +24,7 @@
 
 @media (max-width: 68em) {
   html {
-    font-size: 45.25%;
+    font-size: 41.25%;
   }
 }
 /* ****************** */
@@ -34,7 +34,7 @@
 
 @media (max-width: 53em) {
   html {
-    font-size: 40%;
+    font-size: 34%;
   }
 
   body {
@@ -162,7 +162,7 @@
 
 @media (max-width: 27em) {
   html {
-    font-size: 35%;
+    font-size: 30%;
   }
   .headline {
     margin-bottom: 8.2rem;
